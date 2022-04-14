@@ -1,0 +1,21 @@
+<div>
+    <div>
+        <button class="btn-mn-edit"
+            [class.is-active]="selectedTabName === 'CONTENT'"
+            (click)="onClickTabName('CONTENT')">Контент
+        </button>
+        <button class="btn-mn-edit"
+            [class.is-active]="selectedTabName === 'RESULT'"
+            (click)="onClickTabName('RESULT')">Результат
+        </button>
+    </div>
+    <textarea 
+            *ngIf="selectedTabName === 'CONTENT'"
+            id="description" 
+            [disabled]="isDisabled"
+            [(ngModel)]="editedValue">
+    </textarea>
+    <div *ngIf="selectedTabName === 'RESULT'"
+    [innerHTML]="mkAsHtml(editedValue)">   
+    </div>
+</div>

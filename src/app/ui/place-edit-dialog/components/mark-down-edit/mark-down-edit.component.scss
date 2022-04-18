@@ -1,3 +1,43 @@
 :host {
   display: block;
 }
+
+.mn-edit-div {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  width: 100%;
+}
+
+.mn-edit-btn {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 7px;
+  border-color: rgb(177, 174, 174);
+  margin: 3px;
+}
+
+.mn-edit-btn.is-active {
+  background-color: hsl(0, 0%, 95%);
+}
+
+.mn-edit .input {
+  border-radius: 0 0 14px 14px;
+  font-family: monospace;
+}
+
+.mn-edit textarea {
+  resize: vertical;
+  min-height: 200px;
+  max-height: 400px;
+}
+
+.result {
+  min-height: 200px;
+  max-height: 400px;
+  background-color: hsl(0deg 0% 95%);
+  overflow-y: auto;
+  border-radius: 0 0 14px 14px;
+  padding: 1rem;
+}

@@ -1,21 +1,23 @@
-<div>
-    <div>
-        <button class="btn-mn-edit"
+<div class="mn-edit">
+    <div class="mn-edit-div">
+        <button class="mn-edit-btn"
             [class.is-active]="selectedTabName === 'CONTENT'"
             (click)="onClickTabName('CONTENT')">Контент
         </button>
-        <button class="btn-mn-edit"
+        <button class="mn-edit-btn"
             [class.is-active]="selectedTabName === 'RESULT'"
             (click)="onClickTabName('RESULT')">Результат
         </button>
     </div>
     <textarea 
-            *ngIf="selectedTabName === 'CONTENT'"
-            id="description" 
-            [disabled]="isDisabled"
-            [(ngModel)]="editedValue">
+        *ngIf="selectedTabName === 'CONTENT'"
+        [disabled]="isDisabled"
+        [(ngModel)]="editedValue"
+        class="content input">
     </textarea>
-    <div *ngIf="selectedTabName === 'RESULT'"
-    [innerHTML]="mkAsHtml(editedValue)">   
+    <div 
+        *ngIf="selectedTabName === 'RESULT'"
+        [innerHTML]="mkAsHtml(editedValue)"
+        class="result">   
     </div>
 </div>

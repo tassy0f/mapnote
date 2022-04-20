@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.star-button {
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: rgb(180, 180, 180);
+}
+
+.star-button .icon-image {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.stars-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.star-button.is-selected {
+  color: hsl(45deg 100% 51%);
+}
+
+.star-button[disabled] {
+  color: rgb(80, 79, 79);
+}

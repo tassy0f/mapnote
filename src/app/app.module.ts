@@ -1,9 +1,11 @@
 import { NgModule } from "@angular/core"
 import { BrowserModule } from "@angular/platform-browser"
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component"
 import { PlaceEditDialogModule } from "./ui/place-edit-dialog/place-edit-dialog.module"
 import { ShellModule } from "./ui/shell/shell.module"
+import { API_SERVER_PATH } from "./ui/shared/tokens";
 
 @NgModule({
   declarations: [
@@ -12,9 +14,15 @@ import { ShellModule } from "./ui/shell/shell.module"
   imports: [
     BrowserModule,
     ShellModule,
-    PlaceEditDialogModule
+    PlaceEditDialogModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: API_SERVER_PATH,
+    useValue: "http://localhost:3000"
+  }
+],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

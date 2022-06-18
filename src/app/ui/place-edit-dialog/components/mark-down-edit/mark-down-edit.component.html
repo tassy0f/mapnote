@@ -1,0 +1,23 @@
+<div class="mn-edit">
+    <div class="mn-edit-div">
+        <button class="mn-edit-btn"
+            [class.is-active]="selectedTabName === 'CONTENT'"
+            (click)="onClickTabName('CONTENT')">Контент
+        </button>
+        <button class="mn-edit-btn"
+            [class.is-active]="selectedTabName === 'RESULT'"
+            (click)="onClickTabName('RESULT')">Результат
+        </button>
+    </div>
+    <textarea 
+        *ngIf="selectedTabName === 'CONTENT'"
+        [disabled]="isDisabled"
+        [(ngModel)]="editedValue"
+        class="content input">
+    </textarea>
+    <div 
+        *ngIf="selectedTabName === 'RESULT'"
+        [innerHTML]="mkAsHtml(editedValue)"
+        class="result">   
+    </div>
+</div>
